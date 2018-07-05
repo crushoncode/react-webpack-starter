@@ -22,6 +22,28 @@ module.exports = {
             filename: 'index.html',
             template: './src/index.html'
         })
-    ]
+    ],
+    module: { 
+    // rules receives an array of all of the loaders that we want to use.
+    // for each of the loaders, we need the test property.    
+        rules: [
+            {
+                //this test here will look for all of the files and test if they end in .js.
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
+    }
 }
 
+// babelrc:
+// we have pass preset into this object and pass an array into preset
+// a preset is a collection of code transform plugins
+// which are like the pieces of code that actually apply the actual transformations to our code.
+
+// why we need polyfill?
+// there are some things that we cannot really convert because they simply were not present in the ES5 version of the language.
+// eg. promises or methods like array.from.
