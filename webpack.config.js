@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     //the entry point is where webpack starts bundling.
-    entry: './src/js/index.js',
+    entry: ['babel-polyfill', './src/js/index.js'],
     // tell webpack where to save our bundle file
     output: {
     // use a method which is the path package - path.resolve
