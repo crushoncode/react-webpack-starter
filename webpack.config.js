@@ -8,7 +8,10 @@ module.exports = {
     // tell webpack where to save our bundle file
     output: {
     // use a method which is the path package - path.resolve
-        path: path.resolve(__dirname, 'dist/js'),
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/bundle.js'
     },
+    devServer: {
+        contentBase: './dist'
+    }
 }
