@@ -1,5 +1,5 @@
 const path = require('path');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 // four core concepts: the entry point, the output, loaders, and plugins
 
 module.exports = {
@@ -13,5 +13,15 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist'
-    }
+    },
+    // plugins allow us to do complex processing of our input files (html file)
+    // copy javascript files and the source html into the distribution folder
+    // just ref. plugins can be used to create a new html file from scratch automatically without providing any template.
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './src/index.html'
+        })
+    ]
 }
+
