@@ -34,10 +34,15 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
+            }, {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
             }
         ]
     }
-}
 
 // babelrc:
 // we have pass preset into this object and pass an array into preset
